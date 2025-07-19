@@ -7,7 +7,8 @@ The system collects **gym equipment usage events** via an API, stores them in **
 ---
 
 ## 🚀 Architecture
-![arch](https://github.com/user-attachments/assets/b1a9fffd-ba27-4784-8a4a-81122da7d817)
+<img width="3675" height="1464" alt="image" src="https://github.com/user-attachments/assets/d8f3b277-ab03-4565-b57e-2c07e5bcfa1c" />
+
 
 
 **Workflow:**
