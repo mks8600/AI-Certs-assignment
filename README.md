@@ -42,7 +42,7 @@ The system collects **gym equipment usage events** via an API, stores them in **
 
 ### **1. Clone Repository**
 ```bash
-git clone https://github.com/<your-username>/AI-Certs-assignment.git
+git clone https://github.com/mks8600/AI-Certs-assignment.git
 cd AI-Certs-assignment/iac
 terraform init
 terraform apply -auto-approve
