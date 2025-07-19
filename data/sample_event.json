@@ -1,0 +1,8 @@
+{
+  "member_id": "M12345",
+  "equipment_id": "Treadmill-07",
+  "start_time": "2025-07-18T06:30:00Z",
+  "end_time": "2025-07-18T07:00:00Z",
+  "calories_burned": 200,
+  "membership_expiry": "2025-07-31"
+}

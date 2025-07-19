@@ -1,0 +1,61 @@
+name: CI/CD Pipeline for Cloud Assignment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      # Step 3: Configure AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Step 4: Package Lambda Functions
+      - name: Package Ingest Lambda
+        run: |
+          cd lambda/ingest_lambda
+          zip -r ingest.zip handler.py
+          cd ../..
+
+      - name: Package Report Lambda
+        run: |
+          cd lambda/report_lambda
+          zip -r report.zip handler.py
+          cd ../..
+
+      # Step 5: Terraform Init
+      - name: Terraform Init
+        run: terraform init
+        working-directory: iac
+
+      # Step 6: Terraform Validate
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: iac
+
+      # Step 7: Terraform Plan
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+        working-directory: iac
+
+      # Step 8: Terraform Apply (Auto Approve)
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan
+        working-directory: iac
