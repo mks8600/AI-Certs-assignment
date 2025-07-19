@@ -1,5 +1,38 @@
+# ------------------------------
 # Terraform
+# ------------------------------
 .terraform/
 *.tfstate
 *.tfstate.*
 crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# ------------------------------
+# Python
+# ------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+.envrc
+
+# ------------------------------
+# Lambda Zips
+# ------------------------------
+lambda/ingest_lambda/ingest.zip
+lambda/report_lambda/report.zip
+
+# ------------------------------
+# OS / Editor files
+# ------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
