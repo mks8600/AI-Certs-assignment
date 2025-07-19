@@ -92,3 +92,16 @@ Runs Terraform init, validate, plan, and apply.
 
 Deploys the infrastructure automatically on push to main.
 
+Screenshorts:
+1.S3 Bucket
+<img width="1440" height="900" alt="Screenshot 2025-07-19 at 12 08 16 PM" src="https://github.com/user-attachments/assets/183a48da-c2df-4d29-8c34-46b5e7620f23" />
+
+2.Lambda (Report function manual testing )
+<img width="1440" height="900" alt="Screenshot 2025-07-19 at 12 08 29 PM" src="https://github.com/user-attachments/assets/7da9b6fa-893b-49b0-b894-30e7bf634749" />
+
+3.Github Action (Automation pipline)
+<img width="1440" height="900" alt="Screenshot 2025-07-19 at 12 10 31 PM" src="https://github.com/user-attachments/assets/bd07098c-57f3-4970-b840-42d9ecf2b4ea" />
+
+
+
+
